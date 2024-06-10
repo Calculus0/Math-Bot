@@ -1,0 +1,6 @@
+pygame
+mathgenerator
+gtts
+playsound
+
+
