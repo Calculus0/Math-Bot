@@ -1,6 +1,6 @@
 pygame
 mathgenerator
 gtts
-playsound
+playsound==1.2.2
 
 
