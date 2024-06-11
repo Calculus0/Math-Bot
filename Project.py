@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May 24 00:23:15 2024
-
-"""
 import streamlit as st
 
 st.set_page_config(page_title="My Webpage", layout="wide")
@@ -11,6 +5,7 @@ import time
 from pygame import mixer
 import mathgenerator as mg
 import multiprocessing
+import numpy as np
 
 from gtts import gTTS
 
@@ -18,7 +13,7 @@ from gtts import gTTS
 import os
 import random
 
-from playsound import playsound  
+#from playsound import playsound  
 
 def convert_math_expression(expression):
 
@@ -57,12 +52,12 @@ if topic == 'Calculus':
     problem = problemgenerator(calclist)
     tts = 'tts'
     tts = gTTS(text= problem, lang = 'en')
-    file1 = str("wel.mp3")
+    file1 = str("calc.mp3")
     tts.save(file1)
-    playsound(file1,True)
+    st.write("# Auto-playing Audio!")
+    st.audio(file1, autoplay=True)
     print ('after')
     os.remove(file1)
-        
     
     
 
@@ -74,11 +69,12 @@ if topic == 'Algebra':
     problem = problemgenerator(alglist)
     tts = 'tts'
     tts = gTTS(text= problem, lang = 'en')
-    file1 = str("wel.mp3")
-    tts.save(file1)
-    playsound(file1,True)
+    file2 = str("alg.mp3")
+    tts.save(file2)
+    st.write("# Auto-playing Audio!")
+    st.audio(file2, autoplay=True)
     print ('after')
-    os.remove(file1)
+    os.remove(file2)
 
     
 if topic == 'Statistics':
@@ -89,11 +85,12 @@ if topic == 'Statistics':
     problem = problemgenerator(statlist)
     tts = 'tts'
     tts = gTTS(text= problem, lang = 'en')
-    file1 = str("wel.mp3")
-    tts.save(file1)
-    playsound(file1,True)
+    file3 = str("stat.mp3")
+    tts.save(file3)
+    st.write("# Auto-playing Audio!")
+    st.audio(file3, autoplay=True)
     print ('after')
-    os.remove(file1)
+    os.remove(file3)
    
 if topic == 'Basic Math':
     st.write("Your question is being generated")
@@ -103,11 +100,10 @@ if topic == 'Basic Math':
     problem = problemgenerator(mathlist)
     tts = 'tts'
     tts = gTTS(text= problem, lang = 'en')
-    file1 = str("wel.mp3")
-    tts.save(file1)
-    playsound(file1,True)
+    file4 = str("basic.mp3")
+    tts.save(file4)
+    st.write("# Auto-playing Audio!")
+    st.audio(file4, autoplay=True)
     print ('after')
-    os.remove(file1)
+    os.remove(file4)
     
-
-
